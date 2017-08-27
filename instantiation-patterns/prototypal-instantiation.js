@@ -1,17 +1,15 @@
 'use strict'
 
 /**
- * *** JS functional shared instantiation ***
+ * *** JS prototypal instantiation ***
  * 
- * Like functional instantiation, we will create an emppty object inside a function.
+ * First we need to create methods in separate object
  * 
- * We will define PROPERTIES of the object only, not any methods.
+ * In our main function we will bind those methods to a object using `Object.create` method
  * 
- * Methods will be defined in another object
+ * Also we can define any properties of the object AFTER assign the method 
  * 
- * Then we will extend our object with the method(s)
- * 
- * The last part is the object will be returned from the fuction
+ * At the end we will return the object.  
  */
 
 const methods =  {
@@ -26,10 +24,10 @@ const methods =  {
 }
 
 let employee = (profession, designition) => {
-    let obj = {}
+    // creating the object and assing the methods inside the object
+    let obj = Object.create(methods)
     obj.jobSector = profession
     obj.jobDescription = designition
-    Object.assign(obj, methods)
     return obj
 }
 
