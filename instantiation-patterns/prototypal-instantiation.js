@@ -10,6 +10,8 @@
  * Also we can define any properties of the object AFTER assign the method 
  * 
  * At the end we will return the object.  
+ * 
+ * It uses the prototype chain
  */
 
 const methods =  {
